@@ -25,15 +25,14 @@ The original README of the project can be found here https://github.com/janoside
 
 ## Instructions
 
-```bash
-npm install -g btc-rpc-explorer
-btc-rpc-explorer
-```
+Clone this repo: git clone https://github.com/jheleniak/btc-rpc-explorer
+npm install
+npm run build
+See Configuration Section below for .env file containing appropriate settings
+Optional: Add an ipstack.com API access key to app/credentials.js. Doing so will add a map to the /peers page.
+npm start to start the local server
+Visit http://127.0.0.1:3002/
 
-If you're running on mainnet with the default datadir and port, this Should Just Work.
-Open [http://127.0.0.1:3002/](http://127.0.0.1:3002/) to view the explorer.
-
-You may set configuration options in a `.env` file or using CLI args.
 See [configuration](#configuration) for details.
 
 ### Configuration
