@@ -60,7 +60,24 @@ module.exports = {
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [5, 10, 25, 50, 100, 150, 200, 250],
 	genesisBlockHash: "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
+
+
+genesisBlockHashesByNetwork:{
+		"main":    "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2"
+			},
+
+
+
+
 	genesisCoinbaseTransactionId: "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+
+
+genesisCoinbaseTransactionIdsByNetwork: {
+		"main":    "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744"
+			},
+
+
+
 	genesisCoinbaseTransaction: {
 		"txid":"d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
 		"hash":"d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
