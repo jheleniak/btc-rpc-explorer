@@ -25,13 +25,13 @@ The original README of the project can be found here https://github.com/janoside
 
 ## Instructions
 
-Clone this repo: git clone https://github.com/jheleniak/btc-rpc-explorer
-npm install
-npm run build
-See Configuration Section below for .env file containing appropriate settings
-Optional: Add an ipstack.com API access key to app/credentials.js. Doing so will add a map to the /peers page.
-npm start to start the local server
-Visit http://127.0.0.1:3002/
+* Clone this repo: git clone https://github.com/jheleniak/btc-rpc-explorer
+* npm install
+* npm run build
+ * See Configuration Section below for .env file containing appropriate settings
+* Optional: Add an ipstack.com API access key to app/credentials.js. Doing so will add a map to the /peers page.
+* npm start to start the local server
+* Visit http://127.0.0.1:3002/
 
 See [configuration](#configuration) for details.
 
