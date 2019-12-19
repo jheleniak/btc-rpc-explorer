@@ -152,7 +152,8 @@ module.exports = {
 				{
 					title:"Related Sites",
 					links:[
-						{name: "PricecoinX", url:"https://www.pricecoincrypto.com", imgUrl:"/img/logo/prcx.svg"},
+						{name: "PricecoinX Main Website", url:"https://www.pricecoincrypto.com", imgUrl:"/img/logo/prcx.svg"},
+						{name: "PricecoinX Rich List & Address Lookup", url:"http://bitforcecrypto.com:3001/richlist", imgUrl:"/img/logo/prcx.svg"},
 										]
 				}
 			]
