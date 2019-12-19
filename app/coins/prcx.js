@@ -3,7 +3,7 @@ Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 
 var currencyUnits = [
 	{
-		
+		type:"native",
 		name:"PRCX",
 		multiplier:1,
 		default:true,
@@ -11,21 +11,21 @@ var currencyUnits = [
 		decimalPlaces:8
 	},
 	{
-		
+		type:"native",
 		name:"lite",
 		multiplier:1000,
 		values:["lite"],
 		decimalPlaces:5
 	},
 	{
-		
+		type:"native",
 		name:"photon",
 		multiplier:1000000,
 		values:["photon"],
 		decimalPlaces:2
 	},
 	{
-		
+		type:"native",
 		name:"litoshi",
 		multiplier:100000000,
 		values:["litoshi", "lit"],
@@ -46,11 +46,13 @@ module.exports = {
 	ticker:"PRCX",
 	logoUrl:"/img/logo/prcx.svg",
 	siteTitle:"PricecoinX Explorer",
+	siteDescriptionHtml:"<b>PricecoinX Explorer</b> is <a href='https://github.com/jheleniak/btc-rpc-explorer). ",	
 	nodeTitle:"PricecoinX Full Node",
-	nodeUrl:"https://pricecoincrpyto.com/",
-	demoSiteUrl: "NoDemo",
+	nodeUrl:"https://pricecoincrpyto.com",
+	demoSiteUrl: "https://pricecoincrpyto.com/",
 	miningPoolsConfigUrls:[
-		"https://raw.githubusercontent.com/hashstream/pools/master/pools.json",
+		"https://raw.githubusercontent.com/btccom/Blockchain-Known-Pools/master/pools.json",
+		"https://raw.githubusercontent.com/blockchain/Blockchain-Known-Pools/master/pools.json"
 	],
 	maxBlockWeight: 4000000,
 	targetBlockTimeSeconds: 30,
@@ -59,111 +61,168 @@ module.exports = {
 	baseCurrencyUnit:currencyUnits[3],
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [5, 10, 25, 50, 100, 150, 200, 250],
-	genesisBlockHash: "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
-
-
-genesisBlockHashesByNetwork:{
-		"main":    "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2"
-			},
-
-
-
-
-	genesisCoinbaseTransactionId: "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
-
-
-genesisCoinbaseTransactionIdsByNetwork: {
-		"main":    "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744"
-			},
-
-
-
-	genesisCoinbaseTransaction: {
-		"txid":"d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
-		"hash":"d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
-		"blockhash":"e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
-		"version":1,
-		"locktime":0,
-		"size":165,
-		"vsize":165,
-		"time":1571048398,
-		"blocktime":1571048398,
-		"vin":[
-			{
-				"prev_out":{
-					"hash":"0000000000000000000000000000000000000000000000000000000000000000",
-					"n":0
-				},
-				"coinbase":"04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536"
-			}
-		],
-		"vout":[
-			{
-				"value":"50.0000",
-				"n":0,
-				"scriptPubKey":{
-					"hex":"41040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac OP_CHECKSIG",
-					"type":"pubkey",
-					"reqSigs":1,
-					"addresses":[
-						"PUDHB8FFeCnpuoF8nBiFnfutDxGqjBV7QF"
-					]
-				}
-			}
-		]
+	genesisBlockHashesByNetwork:{
+		"main":    "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
+		"test":    "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
+		"regtest": "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2"
 	},
+	genesisCoinbaseTransactionIdsByNetwork: {
+		"main":    "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+		"test":    "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+		"regtest": "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744"
+	},
+	genesisCoinbaseTransactionsByNetwork:{
+		"main": {
+			"hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0804ffff001d02fd04ffffffff0100f2052a01000000434104f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446aac00000000",
+			"txid": "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+			"hash": "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+			"size": 165,
+			"vsize": 165,
+			"version": 1,
+			"confirmations":167385,
+			"vin": [
+				{
+					"coinbase": "04ffff001d01041e31342f31302f32303139205072696365636f696e58204c61756e63686573",
+					"sequence": 4294967295
+				}
+			],
+			"vout": [
+				{
+					"value": 50,
+					"n": 0,
+					"scriptPubKey": {
+						"asm": "040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9 OP_CHECKSIG",
+						"hex": "41040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac",
+						"reqSigs": 1,
+						"type": "pubkey",
+						"addresses": [
+							"PUDHB8FFeCnpuoF8nBiFnfutDxGqjBV7QF"
+						]
+					}
+				}
+			],
+			"blockhash": "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
+			"time": 1571048398,
+			"blocktime": 1571048398
+		},
+		"test": {
+			"hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4d04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73ffffffff0100f2052a01000000434104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac00000000",
+			"txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"hash": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"version": 1,
+			"size": 204,
+			"vsize": 204,
+			"weight": 816,
+			"locktime": 0,
+			"vin": [
+				{
+					"coinbase": "04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73",
+					"sequence": 4294967295
+				}
+			],
+			"vout": [
+				{
+					"value": 50.00000000,
+					"n": 0,
+					"scriptPubKey": {
+						"asm": "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f OP_CHECKSIG",
+						"hex": "4104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac",
+						"reqSigs": 1,
+						"type": "pubkey",
+						"addresses": [
+							"mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt"
+						]
+					}
+				}
+			],
+			"blockhash": "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
+			"time": 1296688602,
+			"blocktime": 1296688602
+		},
+		"regtest": {
+			"hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4d04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73ffffffff0100f2052a01000000434104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac00000000",
+			"txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"hash": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"version": 1,
+			"size": 204,
+			"vsize": 204,
+			"weight": 816,
+			"locktime": 0,
+			"vin": [
+				{
+					"coinbase": "04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73",
+					"sequence": 4294967295
+				}
+			],
+			"vout": [
+				{
+					"value": 50.00000000,
+					"n": 0,
+					"scriptPubKey": {
+						"asm": "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f OP_CHECKSIG",
+						"hex": "4104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac",
+						"type": "pubkey"
+					}
+				}
+			],
+			"blockhash": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
+			"time": 1296688602,
+			"blocktime": 1296688602
+		}
+	},
+	genesisCoinbaseOutputAddressScripthash:"a5910e72fee6a2aca123d79e95c5bdd5b4eae54f2f755b57e8df836c099c0db5",
 	historicalData: [
-	//	{
-	//		type: "blockheight",
-	//		date: "2011-10-07",
-	//		blockHeight: 0,
-	//		blockHash: "12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2",
-	//		summary: "The Litecoin genesis block.",
-	//		alertBodyHtml: "This is the first block in the Litecoin blockchain.",
-	//		referenceUrl: "https://medium.com/@SatoshiLite/satoshilite-1e2dad89a017"
-	//	},
-	//	{
-	//		type: "tx",
-	//		date: "2017-05-10",
-	//		txid: "ce385e55fb2a73fa438426145b074f08314812fa3396472dc572b3079e26e0f9",
-	//		summary: "First SegWit transaction.",
-	//		referenceUrl: "https://twitter.com/satoshilite/status/862345830082138113"
-	//	},
-	//	{
-	//		type: "blockheight",
-	//		date: "2011-10-13",
-	//		blockHeight: 448,
-	//		blockHash: "6995d69ce2cb7768ef27f55e02dd1772d452deb44e1716bb1dd9c29409edf252",
-	//		summary: "The first block containing a (non-coinbase) transaction.",
-	//		referenceUrl: ""
-	//	},
-	//	{
-	//		type: "link",
-	//		date: "2016-05-02",
-	//		url: "/rpc-browser?method=verifymessage&args%5B0%5D=Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2&args%5B1%5D=G7W57QZ1jevRhBp7SajpcUgJiGs998R4AdBjcIgJq5BOECh4jHNatZKCFLQeo9PvZLf60ykR32XjT4IrUi9PtCU%3D&args%5B2%5D=I%2C+Charlie+Lee%2C+am+the+creator+of+Litecoin&execute=Execute",
-	//		summary: "Litecoin's Proof-of-Creator",
-	//		referenceUrl: "https://medium.com/@SatoshiLite/satoshilite-1e2dad89a017"
-	//	}
-	],
+		{
+			type: "blockheight",
+			date: "2019-10-14",
+			chain: "main",
+			blockHeight: 0,
+			blockHash: "e96fe042f9a306b109b7276c47488fceafcbd98a4456676bcf42307087af30f2",
+			summary: "The PricecoinX Genesis Block.",
+			alertBodyHtml: "This is the first block in the PricecoinX blockchain, known as the 'Genesis Block'.",
+			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
+		},
+		{
+			type: "tx",
+			date: "2019-10-14",
+			chain: "main",
+			txid: "d6e9a320e9aa8aef4618a7a7c3fa99c971c1cf936d512031e60fcd8ea83e6744",
+			summary: "The coinbase transaction of the Genesis Block for PricecoinX.",
+			alertBodyHtml: "This is the Coinbase transacation for the Genesis Block for PricecoinX",
+			referenceUrl: "https://bitcoin.org/en/glossary/coinbase"
+		},
+		],
 	exchangeRateData:{
-		jsonUrl:"https://api.coinmarketcap.com/v2/ticker/",
-		exchangedCurrencyName:"usd",
+		jsonUrl:"https://api.coindesk.com/v1/bpi/currentprice.json",
 		responseBodySelectorFunction:function(responseBody) {
-			if (responseBody[0] && responseBody[0].price_usd) {
-				return {"usd":responseBody[0].price_usd};
+			//console.log("Exchange Rate Response: " + JSON.stringify(responseBody));
+
+			var exchangedCurrencies = ["USD", "GBP", "EUR"];
+
+			if (responseBody.bpi) {
+				var exchangeRates = {};
+
+				for (var i = 0; i < exchangedCurrencies.length; i++) {
+					if (responseBody.bpi[exchangedCurrencies[i]]) {
+						exchangeRates[exchangedCurrencies[i].toLowerCase()] = responseBody.bpi[exchangedCurrencies[i]].rate_float;
+					}
+				}
+
+				return exchangeRates;
 			}
 			
 			return null;
 		}
 	},
-	blockRewardFunction:function(blockHeight) {
+	blockRewardFunction:function(blockHeight, chain) {
 		var eras = [ new Decimal8(50) ];
 		for (var i = 1; i < 34; i++) {
 			var previous = eras[i - 1];
 			eras.push(new Decimal8(previous).dividedBy(2));
 		}
 
-		var index = Math.floor(blockHeight / 840000);
+		var halvingBlockInterval = (chain == "regtest" ? 150 : 210000);
+		var index = Math.floor(blockHeight / halvingBlockInterval);
 
 		return eras[index];
 	}
